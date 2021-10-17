@@ -47,7 +47,7 @@ console.log(scores.filter(({ marks }) => marks >= 40));
 
 // Find all the names who failed the exams
 
-console.log(scores.filter((e) => e.marks < 40).map(({ name }) => name));
+console.log(scores.filter(({ marks }) => marks < 40).map(({ name }) => name));
 
 // Find the Average marks
 
