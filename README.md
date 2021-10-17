@@ -56,4 +56,4 @@ console.log((scores.map(({ marks }) => marks).reduce(reducer) / scores.length).t
 //Find the topper's name
 
 let max = scores.reduce(ans, 0);
-console.log(scores.filter((e) => e.marks == max).map(({ name }) => name));
+console.log(scores.filter(({ marks }) => marks == max).map(({ name }) => name));
