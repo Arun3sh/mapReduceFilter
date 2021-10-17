@@ -39,21 +39,21 @@ let ans = (acc, score) => (acc = acc > score.marks ? acc : score.marks);
 
 // Print the name list - As an array
 
-console.log(scores.map((e) => e.name));
+console.log(scores.map(({ name }) => name));
 
 // find those student that passed
 
-console.log(scores.filter((e) => e.marks >= 40));
+console.log(scores.filter(({ marks }) => marks >= 40));
 
 // Find all the names who failed the exams
 
-console.log(scores.filter((e) => e.marks < 40).map((names) => names.name));
+console.log(scores.filter((e) => e.marks < 40).map(({ name }) => name));
 
 // Find the Average marks
 
-console.log((scores.map((e) => e.marks).reduce(reducer) / scores.length).toFixed(2));
+console.log((scores.map(({ marks }) => marks).reduce(reducer) / scores.length).toFixed(2));
 
 //Find the topper's name
 
 let max = scores.reduce(ans, 0);
-console.log(scores.filter((e) => e.marks == max).map((names) => names.name));
+console.log(scores.filter((e) => e.marks == max).map(({ name }) => name));
